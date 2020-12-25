@@ -20,7 +20,7 @@ class ProductResource extends JsonResource
             'price' => $this->price,
             'stock'=> $this->stock,
             'discount' =>$this->discount." %",
-            'total' => $this->price - ($this->price*$this->discount)/100,
+            'total' => round($this->price - ($this->price*$this->discount)/100,0),
             'href' => [
                 'link' => route('reviews.index',$this->id)
             ]
